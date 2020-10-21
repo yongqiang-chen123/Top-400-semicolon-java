@@ -1,0 +1,8 @@
+'''
+读取csv文件，逐个检查每个url是否有效，无效的写成一个csv文件
+The attached file Top500-semicolon.csv contains the names and the URLs of the websites of the Top500 US companies. Each row stores one name and one URL separated by a semicolon (";").
+Write a program that shall read the file and report the names of the companies whose websites are "broken." For the purpose of this exercise, assume that all sites are HTTP sites (no HTTPS) and the site is broken either if its URL is invalid or the connection is refused or takes too long to set up. Define TOO_LONG as a constant equal to 2000 milliseconds. 
+For each row in the file, the program shall split the row, construct an HTTP URL from the second half, prepare a connection to the URL, set the connectTimeout and readTimeout to TOO_LONG each, open an InputStream for the connection, and immediately close it (no need to read the data). If any of the operations fails, the program shall write the name of the company and the message from the exception object (e.getMesage()) to the file "errors.csv", separated by semicolons (";"), one failure per line. The program shall create the file even if no errors shall be detected (in that case, it shall remain empty). If the file already exists, it shall be overwritten.
+Do not assume that the input file has 500 lines.
+Deliverables: The program code and the file "errors.csv".
+'''
